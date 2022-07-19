@@ -34,3 +34,18 @@ console.log(
     { id: 3, price: 500 },
   ])
 )
+
+// Q4. Promises
+
+// Q5. Find all the posts by a single user
+async function postsByUser(userId) {
+  const promise = await fetch("https://jsonplaceholder.typicode.com/posts")
+
+  const result = await promise.json()
+
+  const posts = result.filter(element => element.userId === userId)
+
+  console.log(posts)
+}
+
+postsByUser(5)
